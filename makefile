@@ -1,18 +1,20 @@
 CC=g++
 
-CFLAGS=-std=c++11 -Wall -O3 -m64
+CFLAGS=-std=c++11 -Wall -O
 
 SRCDIR   = src
-MATGENDIR = matgensrc
 
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 
+objects = $(SRCDIR)/algorithms.o
 
-all: algorithms
-	
-algorithms:	
-	$(CC) $(CFLAGS) $(SOURCES) $(INCLUDES) -o algorithms
+all : algorithms
+
+algorithms :	$(objects)
+	$(CC) $(CFLAGS) -o algorithms $(objects)
+
+$(objects) :  $(SRCDIR)/elapsedtime.h
 
 clean:
-	rm -f *.o algorithms
+	rm algorithms $(objects)

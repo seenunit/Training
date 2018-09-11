@@ -1,3 +1,6 @@
+#ifndef ELAPSEDTIME_H
+#define ELAPSEDTIME_H
+
 #include <fstream>
 #include <ctime>
 #include <iomanip>
@@ -22,3 +25,5 @@ inline void elapsedtimeFile(std::ofstream &timefile, clock_t begin_time) {
             timefile << elapsedtime << '\n';
     }
 }
+
+#endif
