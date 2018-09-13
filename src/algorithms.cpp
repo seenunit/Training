@@ -3,6 +3,6 @@
 
 int main()
 {
-	RandomClosestPairPointTest();
+    RandomCountingInversionTest();
 	return 0;
 }

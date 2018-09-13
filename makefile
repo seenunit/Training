@@ -7,7 +7,7 @@ SRCDIR   = src
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 
-OBJECTS = src/algorithms.o src/closestpairpoints.o
+OBJECTS = src/algorithms.o src/closestpairpoints.o src/countinginversions.o
 
 all: algorithms
 
