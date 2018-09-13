@@ -7,14 +7,15 @@ SRCDIR   = src
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 
-objects = $(SRCDIR)/algorithms.o
+OBJECTS = src/algorithms.o src/closestpairpoints.o
 
-all : algorithms
+all: algorithms
 
-algorithms :	$(objects)
-	$(CC) $(CFLAGS) -o algorithms $(objects)
+$(SRCDIR)/%.o: $(SRCDIR)/%.cpp $(INCLUDES)
+	$(CC) -c -o $@ $< $(CFLAGS) 
 
-$(objects) :  $(SRCDIR)/elapsedtime.h
+algorithms :	$(OBJECTS)
+	$(CC) -o algorithms $(OBJECTS) $(CFLAGS)
 
 clean:
-	rm algorithms $(objects)
+	rm algorithms $(OBJECTS)
