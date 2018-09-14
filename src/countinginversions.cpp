@@ -13,9 +13,16 @@ void swap(int &a, int &b)
 int SortandCount(int arr[], int start, int end)
 {
 	int count = 0;
+
+	if(start == end)
+	{
+		return count;
+	}
+
+
     int n = end - start + 1;
 
-	if(n == 2)
+/*	if(n == 2)
 	{
         if (arr[start] > arr[end])
         {
@@ -25,6 +32,7 @@ int SortandCount(int arr[], int start, int end)
         
         return count;
 	}
+*/
 	//divide the arr in to arrays
 	int mid = start + (end - start)/ 2 ;
 
@@ -33,9 +41,9 @@ int SortandCount(int arr[], int start, int end)
 
     count = l + r;
 
-    int A[n];
+    int *A = new int[n];
 
-    int i = 0;
+    int i = start;
     int j = mid + 1;
 	
 	//merge the array
@@ -69,6 +77,8 @@ int SortandCount(int arr[], int start, int end)
         arr[k] = A[i];
         i++;
     }
+
+    delete[] A;
 
     return count;
 }
