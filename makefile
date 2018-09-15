@@ -1,6 +1,6 @@
 CC=g++
 
-CFLAGS=-std=c++11 -Wall -O
+CFLAGS=-g -std=c++11 -Wall -O
 
 SRCDIR   = src
 

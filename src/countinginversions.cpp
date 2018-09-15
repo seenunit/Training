@@ -12,34 +12,21 @@ void swap(int &a, int &b)
 
 int SortandCount(int arr[], int start, int end)
 {
-	int count = 0;
-
-	if(start == end)
+	if(start >= end)
 	{
-		return count;
+		return 0;
 	}
 
 
     int n = end - start + 1;
 
-/*	if(n == 2)
-	{
-        if (arr[start] > arr[end])
-        {
-            swap(arr[start], arr[end]);
-            ++count;
-        }
-        
-        return count;
-	}
-*/
 	//divide the arr in to arrays
 	int mid = start + (end - start)/ 2 ;
 
 	int l = SortandCount(arr,start, mid);
-	int r = SortandCount(arr+ mid + 1, mid + 1, end);
+	int r = SortandCount(arr, mid + 1, end);
 
-    count = l + r;
+	int m = 0;
 
     int *A = new int[n];
 
@@ -49,7 +36,7 @@ int SortandCount(int arr[], int start, int end)
 	//merge the array
 	for(int k = 0; k < n; k++)
 	{
-        if (i <= mid && j <= end && arr[i] < arr[j])
+        if (i <= mid && j <= end && arr[i] <= arr[j])
         {
             A[k] = arr[i];
             i++;
@@ -59,7 +46,9 @@ int SortandCount(int arr[], int start, int end)
             A[k] = arr[j];
             j++;
 
-            count += mid - i + 1;
+            int count = mid - i + 1;
+	   // std::cout << count << std::endl;
+	    m = m + count;
         }
         else
         {
@@ -78,9 +67,11 @@ int SortandCount(int arr[], int start, int end)
         i++;
     }
 
+//	std::cout << "l = " << l << " , r = " << r << " , m = " << m << std::endl;
+
     delete[] A;
 
-    return count;
+    return l + r + m;
 }
 
 void RandomCountingInversionTest()
@@ -92,6 +83,14 @@ void RandomCountingInversionTest()
 
     int arr[] = { 2, 1, 3, 1, 2 };
 
+    for (int k = 0; k < 5; k++)
+    {
+        std::cout << arr[k] << " ";
+    }
+
+    std::cout << std::endl;
+
+
     int count = SortandCount(arr, 0, 4);
 
     std::cout << "inversion count :" << count << std::endl;
@@ -100,5 +99,6 @@ void RandomCountingInversionTest()
     {
         std::cout << arr[k] << " ";
     }
+    std::cout << std::endl;
 
 }
