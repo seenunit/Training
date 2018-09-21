@@ -3,6 +3,7 @@
 
 int main()
 {
-    RandomCountingInversionTest();
-	return 0;
+   RandomQuickSortTest();
+   //RandomCountingInversionTest();
+   return 0;
 }

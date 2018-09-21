@@ -8,7 +8,8 @@ OBJDIR = obj
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 
-OBJECTS = $(OBJDIR)/algorithms.o  $(OBJDIR)/closestpairpoints.o $(OBJDIR)/countinginversions.o
+OBJECTS = $(OBJDIR)/algorithms.o  $(OBJDIR)/closestpairpoints.o $(OBJDIR)/quicksort.o \
+	  $(OBJDIR)/countinginversions.o
 
 all: algorithms
 
