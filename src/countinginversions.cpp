@@ -10,6 +10,14 @@ void swap(int &a, int &b) {
   b = temp;
 }
 
+void printarray(int *arr, int start, int end)
+{
+    for(int i = start; i <= end; i++)
+        std::cout << arr[i] << " ";
+
+    std::cout << std::endl;
+}
+
 int MergeSortandCountInversions(int arr[], int start, int end) {
   if (start >= end) {
     return 0;
@@ -22,6 +30,12 @@ int MergeSortandCountInversions(int arr[], int start, int end) {
 
   int l = MergeSortandCountInversions(arr, start, mid);
   int r = MergeSortandCountInversions(arr, mid + 1, end);
+
+//  std::cout << "Left array : ";
+//  printarray(arr, start, mid);
+
+//  std::cout << "Reight array : ";
+//  printarray(arr, mid+1, end);
 
   int m = 0;
 
@@ -43,14 +57,10 @@ int MergeSortandCountInversions(int arr[], int start, int end) {
       // std::cout << count << std::endl;
       m = m + count;
     } else {
-      if (i <= mid){
-		A[k] = arr[i];
-		i++;
-	  }
-      else if (j <= end){
+      if (i == mid)
+        A[k] = arr[i];
+      else if (j == end)
         A[k] = arr[j];
-		j++;
-	  }
     }
   }
 
@@ -60,8 +70,11 @@ int MergeSortandCountInversions(int arr[], int start, int end) {
     i++;
   }
 
-  //	std::cout << "l = " << l << " , r = " << r << " , m = " << m <<
-  //std::endl;
+//  std::cout << "Full array after merge : ";
+//  printarray(arr, start, end);
+
+  //	std::cout << "l = " << l << " , r = " << r << " , m = " << m;
+  //    std::cout << std::endl;
 
   delete[] A;
 
@@ -88,7 +101,7 @@ void RandomCountingInversionTest() {
   clock_t begin_time = clock();
 
   begintime(begin_time);
-  int count = MergeSortandCountInversions(arr, 0, N);
+  int count = MergeSortandCountInversions(arr, 0, N-1);
   elapsedtimeFile(timefile, begin_time);
 
   std::cout << "inversion count :" << count << std::endl;
