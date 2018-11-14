@@ -43,10 +43,14 @@ int MergeSortandCountInversions(int arr[], int start, int end) {
       // std::cout << count << std::endl;
       m = m + count;
     } else {
-      if (i == mid)
-        A[k] = arr[i];
-      else if (j == end)
+      if (i <= mid){
+		A[k] = arr[i];
+		i++;
+	  }
+      else if (j <= end){
         A[k] = arr[j];
+		j++;
+	  }
     }
   }
 

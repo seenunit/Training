@@ -96,7 +96,7 @@ double ClosestPair(Point *points, int n, Point *pairs)
 
 	// strip of points which fall between minmum distance
 	// time compexity of O(n)
-	Point strip[n];
+	Point *strip = new Point[n];
 	int j = 0;
 	for (int i = 0; i < n; i++)
 	{
@@ -106,6 +106,8 @@ double ClosestPair(Point *points, int n, Point *pairs)
 
 	//split closest pair
 	return std::min(d, SplitClosestPair(strip, j, d, pairs));
+
+	delete[] strip;
 }
 
 void RandomClosestPairPointTest()
