@@ -27,12 +27,18 @@
     <ClCompile Include="src\quicksort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\algorithms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\elapsedtime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

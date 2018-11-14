@@ -3,7 +3,8 @@
 
 int main()
 {
-   RandomQuickSortTest();
+	TestGraphBFS();
+   //RandomQuickSortTest();
    //RandomCountingInversionTest();
    return 0;
 }
