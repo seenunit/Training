@@ -26,9 +26,9 @@
     <ClCompile Include="src\quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\algorithms.h" />
-    <ClInclude Include="src\elapsedtime.h" />
-    <ClInclude Include="src\graph.h" />
+    <ClInclude Include="include\algorithms.h" />
+    <ClInclude Include="include\elapsedtime.h" />
+    <ClInclude Include="include\graph.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -88,6 +88,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include/</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

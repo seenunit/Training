@@ -32,13 +32,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\algorithms.h">
+    <ClInclude Include="include\algorithms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\elapsedtime.h">
+    <ClInclude Include="include\elapsedtime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\graph.h">
+    <ClInclude Include="include\graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
