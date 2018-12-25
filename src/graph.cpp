@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <limits>
 
 template <typename T>
 Graph<T>::Graph(std::initializer_list<T> l, int v) {
@@ -77,7 +78,7 @@ void Graph<T>::ShortPath(T start, T end, bool bWieghts) {
 
 	for (auto map : m_mapAdjList) {
 		visited[map.first] = false;
-		distance[map.first] = INT_MAX;
+		distance[map.first] = std::numeric_limits<int>::max();
 		pred[map.first] = map.first;
 	}
 	
@@ -143,6 +144,8 @@ void Graph<T>::ShortPath(T start, T end, bool bWieghts) {
 		std::cout << "\nPath is::\n";
 		for (int i = path.size() - 1; i >= 0; i--)
 			std::cout << path[i] << " ";
+
+		std::cout << std::endl;
 	}
 
 
