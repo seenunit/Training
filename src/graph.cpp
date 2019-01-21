@@ -95,7 +95,7 @@ void Graph<T>::ShortPath(T start, T end, bool bWieghts) {
 	bool reached_end = false;
 	
 	while (!queue.empty()) {
-		// Dequeue a vertex from queue and print it 
+		// Dequeue a vertex from queue
 		s = queue.front();
 		queue.pop_front();
 
